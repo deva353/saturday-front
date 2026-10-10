@@ -12,6 +12,7 @@ import MyOrders from "./pages/MyOrders";
 import Admin from "./pages/Admin";
 import AdminOrders from "./pages/AdminOrders";
 import ProtectedRoute from "./components/ProtectedRoute";
+import Register from "./pages/Register";
 
 function Navigation() {
   const token = localStorage.getItem("token");
@@ -61,6 +62,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+         <Route path="/register" element={<Register />} />
 
         <Route element={<ProtectedRoute />}>
           <Route path="/my-orders" element={<MyOrders />} />
@@ -79,6 +81,7 @@ function App() {
           element={<Navigate to="/" replace />}
         />
       </Routes>
+     
     </BrowserRouter>
   );
 }
